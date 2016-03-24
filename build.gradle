@@ -31,7 +31,7 @@ ext {
 
 
 jar {
-    baseName = 'spring-boot-scala-web'
+    baseName = 'resti'
     version =  '0.1.0'
 }
 

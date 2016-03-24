@@ -12,7 +12,7 @@ web application using spring-boot and Scala
 + Compile using `./gradle compileScala`
 + Build using `./gradlew build`
 + Run using `./gradlew bootRun` OR `./gradle bRun`
-OR  `java -jar build/libs/spring-boot-scala-web-0.1.0.jar`
+OR  `java -jar build/libs/resti-0.1.0.jar`
 
 After the web container Started, open the browser visit [http://localhost:8080/](http://localhost:8080/)
 

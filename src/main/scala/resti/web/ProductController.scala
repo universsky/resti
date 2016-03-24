@@ -16,10 +16,6 @@ class ProductController @Autowired() (private val httpApiRepository: HttpApiRepo
 
   @RequestMapping(method = Array(RequestMethod.GET))
   def list(model: Model) = {
-    // get current user
-    val userDetails = SecurityContextHolder.getContext().getAuthentication().getPrincipal().asInstanceOf[UserDetails]
-    model.addAttribute("currentUser", userDetails.getUsername)
-    
     model.addAttribute("products", httpApiRepository.findProducts())
     "product/list"
   }

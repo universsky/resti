@@ -1,18 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	layout:decorator="layout/nav">
-<head>
-<title th:text="#{app.name}">List of Products</title>
-<link rel="stylesheet"
-	th:href="@{/webjars/bootstrap/3.1.1/css/bootstrap.min.css}"
-	href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
-<link rel="stylesheet"
-	th:href="@{/webjars/bootstrap/3.1.1/css/bootstrap-theme.css}"
-	href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.css" />
-<link rel="stylesheet" th:href="@{/css/application.css}"
-	href="../../static/css/application.css" />
-</head>
+<html xmlns:th="http://www.thymeleaf.org">
+<header th:include="layout/header :: header"> </header>
 <body>
+	<div th:include="layout/nav :: nav"></div>
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
@@ -22,11 +12,11 @@
 		<div layout:fragment="content">
 			<div class="row">
 				<div class="col-xs-12">
-					<table class="table table-bordered table-striped">
+					<table class="table table-bordered table-hover">
 						<thead>
 							<tr>
-								<th>ID</th>
-								<th>Name</th>
+								<th>序号</th>
+								<th>产品</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -43,5 +33,6 @@
 			</div>
 		</div>
 	</div>
+	<div th:include="layout/footer :: copy"></div>
 </body>
 </html>

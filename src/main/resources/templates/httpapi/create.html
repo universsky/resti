@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	layout:decorator="layout/nav">
+<html xmlns:th="http://www.thymeleaf.org" >
 <head>
-<meta charset="utf-8"/>
+<meta charset="utf-8" />
 <title th:text="#{app.name}">Create HttpApis</title>
 <link rel="stylesheet"
 	th:href="@{/webjars/bootstrap/3.1.1/css/bootstrap.min.css}"
@@ -14,6 +13,7 @@
 	href="../../static/css/application.css" />
 </head>
 <body>
+	<div th:include="layout/nav :: nav"></div>
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
@@ -128,5 +128,6 @@
 			</div>
 		</div>
 	</div>
+	<div th:include="layout/footer :: copy"></div>
 </body>
 </html>

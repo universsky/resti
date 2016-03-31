@@ -4,8 +4,6 @@ import java.lang.Long
 
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.PagingAndSortingRepository
-
-import javax.persistence.Persistence
 import resti.domain.HttpApi
 
 trait HttpApiRepository extends PagingAndSortingRepository[HttpApi, Long] {

@@ -1,13 +1,23 @@
-<div th:fragment="nav" class="navbar navbar-collapse navbar-fixed-top"
+<div th:fragment="nav" class="navbar navbar-collapse navbar-fixed-top header"
      role="navigation">
     <div class="container-fluid">
         <ul class="nav navbar-nav">
             <li><a class="navbar-brand" th:href="@{/product}">RESTI</a></li>
             <li><a href="/httpapi">接口管理</a></li>
             <li><a href="/testcase">测试用例</a></li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle"
-                                    data-toggle="dropdown" th:text='${#httpServletRequest.remoteUser}'>
-                [[${#httpServletRequest.remoteUser}]]!</a>
+            <li class="dropdown"><a href="/environment">环境配置</a>
+                <ul class="dropdown-menu">
+                    <li> 数据库 dataSource</li>
+                    <li> 登陆 Session</li>
+                    <li> 测试环境 Host</li>
+                </ul>
+
+            </li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle"
+                   data-toggle="dropdown" th:text='${#httpServletRequest.remoteUser}'>
+                </a>
                 <ul class="dropdown-menu">
                     <li><a href="#">个人资料</a></li>
                     <li><a href="#">帮助</a></li>

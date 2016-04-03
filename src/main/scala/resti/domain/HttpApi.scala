@@ -1,11 +1,11 @@
 package resti.domain
 
-import javax.persistence.Id
-import javax.persistence.GeneratedValue
 import java.lang.Long
-import javax.persistence.Entity
-import scala.beans.BeanProperty
+import javax.persistence.{Entity, GeneratedValue, Id}
+
 import org.hibernate.validator.constraints.NotEmpty
+
+import scala.beans.BeanProperty
 
 @Entity
 class HttpApi {
@@ -17,15 +17,15 @@ class HttpApi {
 
   @BeanProperty
   @NotEmpty
+  var name: String = _
+
+  @BeanProperty
+  @NotEmpty
   var product: String = _
 
   @BeanProperty
   @NotEmpty
   var module: String = _
-
-  @BeanProperty
-  @NotEmpty
-  var name: String = _
 
   @BeanProperty
   @NotEmpty
@@ -37,17 +37,19 @@ class HttpApi {
 
   @BeanProperty
   @NotEmpty
-  var paramsType: String = _ // 'json'  'header'  'form'  'body'
+  var paramsType: String = _ // 'json'  'header'  'form'
 
   @BeanProperty
-  var paramsContent: String = _ // json string
+  var paramsKeys: String = _ // , separate : deviceId,accessToken, platform
+
+  /**
+    * get,post
+    */
+  @BeanProperty
+  var requestMethod: String = _
 
   @BeanProperty
-  var expectOutput: String = _
+  var owner: String = _
 
-  @BeanProperty
-  var actualOutput: String = _
 
-  @BeanProperty
-  var result: String = _ // Pass Fail Not_Implemented
 }

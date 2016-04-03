@@ -1,6 +1,6 @@
 # RESTI
 
-## A REST API TEST Platform, develop by Scala , SpringBoot, JPA, Security, Bootstrap, themeleaf
+## A REST API TEST Platform, develop by Scala , SpringBoot, JPA, Security, Bootstrap, thymeleaf
 
 ----------------------------------------------------
 web application using spring-boot and Scala

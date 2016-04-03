@@ -15,6 +15,7 @@ class MySecurityConfigurer extends WebSecurityConfigurerAdapter {
       .withUser("user").password("user").roles("USER")
       .and().withUser("admin").password("admin").roles("ADMIN")
       .and().withUser("jack").password("123456").roles("ADMIN")
+      .and().withUser("之剑").password("111111").roles("ADMIN")
   }
 
   override def configure(http: HttpSecurity): Unit = {

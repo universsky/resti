@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <h1 class="well well-small">HttpApi</h1>
+            <h1 class="well well-small">接口管理</h1>
         </div>
     </div>
     <div layout:fragment="content">
@@ -22,9 +22,9 @@
                         <th>Host</th>
                         <th>Uri</th>
                         <th>paramsType</th>
-                        <th>paramsContent</th>
-                        <th>expectOutput</th>
-                        <th>actualOutput</th>
+                        <th>paramsKeys</th>
+                        <th>requestMethod</th>
+                        <th>owner</th>
                         <th>Ops</th>
                     </tr>
                     </thead>
@@ -40,12 +40,13 @@
                         <td th:text="${api.host}">Host</td>
                         <td th:text="${api.uri}">Uri</td>
                         <td th:text="${api.paramsType}">paramsType</td>
-                        <td th:text="${api.paramsContent}">paramsContent</td>
-                        <td th:text="${api.expectOutput}">expectOutput</td>
-                        <td th:text="${api.actualOutput}">actualOutput</td>
+                        <td th:text="${api.paramsKeys}">paramsKeys</td>
+                        <td th:text="${api.requestMethod}">requestMethod</td>
+                        <td th:text="${api.owner}">owner</td>
 
                         <td><a th:href="@{/httpapi/edit/__${api.id}__}" href="#">编辑</a>
                             | <a th:href="@{/httpapi/delete/__${api.id}__}" href="#">删除</a>
+                            | <a th:href="@{/httpapi/testcase/__${api.id}__}" href="#">测试用例</a>
                         </td>
                     </tr>
                     </tbody>
@@ -54,7 +55,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <a href="#" th:href="@{/httpapi?form=true}" class="btn btn-default">新建接口</a>
+                <a href="#" th:href="@{/httpapi?form=true}" class="btn btn-primary">新建接口</a>
             </div>
         </div>
     </div>

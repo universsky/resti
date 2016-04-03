@@ -2,19 +2,21 @@ package resti.web
 
 import java.lang.Long
 import javax.validation.Valid
+
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.validation.BindingResult
-import org.springframework.web.bind.annotation.{ PathVariable, RequestMapping, RequestMethod }
-import resti.service.HttpApiRepository
+import org.springframework.web.bind.annotation.{PathVariable, RequestMapping, RequestMethod, ResponseBody}
 import resti.domain.HttpApi
-import org.springframework.web.bind.annotation.ResponseBody
-import org.springframework.security.access.prepost.PreAuthorize
+import resti.service.{HttpApiRepository, TestCaseRepository}
 
 @Controller
 @RequestMapping(Array("/httpapi"))
-class HttpApiController @Autowired() (private val httpApiRepository: HttpApiRepository) {
+class HttpApiController @Autowired()(private val httpApiRepository: HttpApiRepository,
+                                     private val testCaseRepository: TestCaseRepository
+                                    ) {
 
   @RequestMapping(method = Array(RequestMethod.GET))
   def list(model: Model) = {
@@ -30,10 +32,22 @@ class HttpApiController @Autowired() (private val httpApiRepository: HttpApiRepo
   }
 
   @RequestMapping(Array("/edit/{id}"))
-  @PreAuthorize("hasRole('ROLE_ADMIN')")
   def edit(@PathVariable("id") id: Long, model: Model) = {
     model.addAttribute("httpApi", httpApiRepository.findOne(id))
     "httpapi/edit"
+  }
+
+  /**
+    * list the test cases under this api
+    *
+    * @param id
+    * @param model
+    * @return
+    */
+  @RequestMapping(Array("/testcase/{id}"))
+  def listTestCase(@PathVariable("id") id: Long, model: Model) = {
+    model.addAttribute("testcases", testCaseRepository.findByHttpApiId(id))
+    "httpapi/listTestCase"
   }
 
   @RequestMapping(method = Array(RequestMethod.GET), params = Array("form"))

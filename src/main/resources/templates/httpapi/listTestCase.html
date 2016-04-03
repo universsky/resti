@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<header th:include="layout/header :: header"></header>
+<body>
+<div th:include="layout/nav :: nav"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 class="well well-small">测试用例</h1>
+        </div>
+    </div>
+    <div layout:fragment="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>paramsValues</th>
+                        <th>owner</th>
+                        <th>Ops</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:if="${testcases.empty}">
+                        <td colspan="5">No messages</td>
+                    </tr>
+                    <tr th:each="tc : ${testcases}">
+                        <td th:text="${tc.id}">1</td>
+                        <td th:text="${tc.name}">Name</td>
+                        <td th:text="${tc.paramsValues}">paramsValues</td>
+                        <td th:text="${tc.owner}">owner</td>
+
+                        <td><a th:href="@{/testcase/edit/__${tc.id}__}" href="#">编辑</a>
+                            | <a th:href="@{/testcase/delete/__${tc.id}__}" href="#">删除</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="#" th:href="@{/httpapi?form=true}" class="btn btn-primary">新建用例</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="layout/footer :: copy"></div>
+</body>
+</html>

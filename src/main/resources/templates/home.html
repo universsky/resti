@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org">
-<header th:include="layout/header :: header"> </header>
+<header th:include="layout/header :: header"></header>
 <body>
-	<div th:include="layout/nav :: nav"></div>
-	<p>
-		Click <a th:href="@{/product}">here</a> to see product list.
-	</p>
-	<div th:include="layout/footer :: copy"></div>
+<div th:include="layout/nav :: nav"></div>
+<div class="row">
+    <div class="col-xs-12">
+        <h1 class="well well-small">RESTI HOME</h1>
+    </div>
+</div>
+
+<h1>Welcome to RESTI </h1>
+<p>
+    Click <a th:href="@{/product}">here</a> to see product list.
+</p>
+<div th:include="layout/footer :: copy"></div>
 </body>
 </html>

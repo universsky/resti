@@ -3,130 +3,143 @@
 <header th:include="layout/header :: header"></header>
 <body>
 <div th:include="layout/nav :: nav"></div>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-xs-12">
             <h1 class="well well-small">HttpApis</h1>
         </div>
     </div>
-    <div layout:fragment="content">
-        <div class="row">
-            <div class="col-xs-12">
-                <form action="#" th:action="@{/httpapi/new}" method="POST"
-                      th:object="${httpApi}" class="form-horizontal">
-                    <div class="form-group">
-                        <label for="name" class="col-xs-2">Name</label>
-                        <div class="col-xs-6">
-                            <input class="form-control" placeholder="Name"
-                                   th:field="*{name}"/>
-                        </div>
-                        <div class="col-xs-4">
-                            <p class="text-warning" th:if="${#fields.hasErrors('name')}"
-                               th:errors="*{name}">Error with Name</p>
-                        </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <form action="#" th:action="@{/httpapi/new}" method="POST"
+                  th:object="${httpApi}" class="form-horizontal">
+                <div class="form-group">
+                    <label for="name" class="col-xs-2">Name</label>
+                    <div class="col-xs-6">
+                        <input class="form-control" placeholder="Name"
+                               th:field="*{name}"/>
                     </div>
+                    <div class="col-xs-4">
+                        <p class="text-warning" th:if="${#fields.hasErrors('name')}"
+                           th:errors="*{name}">Error with Name</p>
+                    </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="product" class="col-xs-2">Product</label>
-                        <div class="col-xs-6">
-                            <input class="form-control" placeholder="Product"
-                                   th:field="*{product}"/>
-                        </div>
-                        <div class="col-xs-4">
-                            <p class="text-warning" th:if="${#fields.hasErrors('product')}"
-                               th:errors="*{product}">Error with Product</p>
-                        </div>
+                <div class="form-group">
+                    <label for="product" class="col-xs-2">Product</label>
+                    <div class="col-xs-6">
+                        <input class="form-control" placeholder="Product"
+                               th:field="*{product}"/>
                     </div>
+                    <div class="col-xs-4">
+                        <p class="text-warning" th:if="${#fields.hasErrors('product')}"
+                           th:errors="*{product}">Error with Product</p>
+                    </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="module" class="col-xs-2">Module</label>
-                        <div class="col-xs-6">
-                            <input class="form-control" placeholder="Module"
-                                   th:field="*{module}"/>
-                        </div>
-                        <div class="col-xs-4">
-                            <p class="text-warning" th:if="${#fields.hasErrors('module')}"
-                               th:errors="*{module}">Error with Module</p>
-                        </div>
+                <div class="form-group">
+                    <label for="module" class="col-xs-2">Module</label>
+                    <div class="col-xs-6">
+                        <input class="form-control" placeholder="Module"
+                               th:field="*{module}"/>
                     </div>
+                    <div class="col-xs-4">
+                        <p class="text-warning" th:if="${#fields.hasErrors('module')}"
+                           th:errors="*{module}">Error with Module</p>
+                    </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="Host" class="col-xs-2">Host</label>
-                        <div class="col-xs-6">
-                            <input class="form-control" placeholder="Host"
-                                   th:field="*{host}"/>
-                        </div>
-                        <div class="col-xs-4">
-                            <p class="text-warning" th:if="${#fields.hasErrors('host')}"
-                               th:errors="*{host}">Error with Host</p>
-                        </div>
+                <div class="form-group">
+                    <label for="Host" class="col-xs-2">Host</label>
+                    <div class="col-xs-6">
+                        <input class="form-control" placeholder="Host"
+                               th:field="*{host}"/>
                     </div>
-                    <div class="form-group">
-                        <label for="Uri" class="col-xs-2">Uri</label>
-                        <div class="col-xs-6">
-                            <input class="form-control" placeholder="Uri" th:field="*{uri}"/>
-                        </div>
-                        <div class="col-xs-4">
-                            <p class="text-warning" th:if="${#fields.hasErrors('uri')}"
-                               th:errors="*{uri}">Error with Uri</p>
-                        </div>
+                    <div class="col-xs-4">
+                        <p class="text-warning" th:if="${#fields.hasErrors('host')}"
+                           th:errors="*{host}">Error with Host</p>
                     </div>
+                </div>
+                <div class="form-group">
+                    <label for="Uri" class="col-xs-2">Uri</label>
+                    <div class="col-xs-6">
+                        <input class="form-control" placeholder="Uri" th:field="*{uri}"/>
+                    </div>
+                    <div class="col-xs-4">
+                        <p class="text-warning" th:if="${#fields.hasErrors('uri')}"
+                           th:errors="*{uri}">Error with Uri</p>
+                    </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="paramsType" class="col-xs-2">paramsType</label>
-                        <div class="col-xs-6">
-                            <input class="form-control" placeholder="paramsType"
-                                   th:field="*{paramsType}"/>
-                        </div>
-                        <div class="col-xs-4">
-                            <p class="text-warning"
-                               th:if="${#fields.hasErrors('paramsType')}"
-                               th:errors="*{paramsType}">Error with paramsType</p>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="paramsType" class="col-xs-2">paramsType</label>
+                    <div class="col-xs-6">
+                        <!--<input class="form-control" placeholder="paramsType"-->
+                        <!--th:field="*{paramsType}"/>-->
 
-                    <div class="form-group">
-                        <label for="paramsKeys" class="col-xs-2">paramsKeys</label>
-                        <div class="col-xs-6">
-                            <input class="form-control" placeholder="paramsKeys"
-                                   th:field="*{paramsKeys}"/>
-                        </div>
-                        <div class="col-xs-4">
-                            <p class="text-warning"
-                               th:if="${#fields.hasErrors('paramsKeys')}"
-                               th:errors="*{paramsKeys}">Error with paramsKeys</p>
-                        </div>
-                    </div>
+                        <select class="form-control" th:field="*{paramsType}">
+                            <option th:value="HEADER">HEADER</option>
+                            <option th:value="FORM">FORM</option>
+                            <option th:value="RAW">RAW</option>
+                            <option th:value="JSON">JSON</option>
+                        </select>
 
-                    <div class="form-group">
-                        <label for="requestMethod" class="col-xs-2">requestMethod</label>
-                        <div class="col-xs-6">
-                            <input class="form-control" placeholder="requestMethod"
-                                   th:field="*{requestMethod}"/>
-                        </div>
-                        <div class="col-xs-4">
-                            <p class="text-warning"
-                               th:if="${#fields.hasErrors('requestMethod')}"
-                               th:errors="*{requestMethod}">Error with requestMethod</p>
-                        </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="owner" class="col-xs-2">owner</label>
-                        <div class="col-xs-6">
-                            <input class="form-control" placeholder="owner"
-                                   th:field="*{owner}" th:value='${#httpServletRequest.remoteUser}'/>
-                        </div>
-                        <div class="col-xs-4">
-                            <p class="text-warning"
-                               th:if="${#fields.hasErrors('owner')}"
-                               th:errors="*{owner}">Error with owner</p>
-                        </div>
+                    <div class="col-xs-4">
+                        <p class="text-warning"
+                           th:if="${#fields.hasErrors('paramsType')}"
+                           th:errors="*{paramsType}">Error with paramsType</p>
                     </div>
+                </div>
 
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-            </div>
+                <div class="form-group">
+                    <label for="paramsKeys" class="col-xs-2">paramsKeys</label>
+                    <div class="col-xs-6">
+                        <input class="form-control" placeholder="paramsKeys"
+                               th:field="*{paramsKeys}"/>
+                    </div>
+                    <div class="col-xs-4">
+                        <p class="text-warning"
+                           th:if="${#fields.hasErrors('paramsKeys')}"
+                           th:errors="*{paramsKeys}">Error with paramsKeys</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="requestMethod" class="col-xs-2">requestMethod</label>
+                    <div class="col-xs-6">
+
+                        <!--<input class="form-control" placeholder="requestMethod"-->
+                        <!--th:field="*{requestMethod}"/>-->
+
+                        <select class="form-control" th:field="*{requestMethod}">
+                            <option th:value="GET">GET</option>
+                            <option th:value="POST">POST</option>
+                        </select>
+
+                    </div>
+                    <div class="col-xs-4">
+                        <p class="text-warning"
+                           th:if="${#fields.hasErrors('requestMethod')}"
+                           th:errors="*{requestMethod}">Error with requestMethod</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="owner" class="col-xs-2">owner</label>
+                    <div class="col-xs-6">
+                        <input class="form-control" placeholder="owner"
+                               th:field="*{owner}" th:value='${#httpServletRequest.remoteUser}'/>
+                    </div>
+                    <div class="col-xs-4">
+                        <p class="text-warning"
+                           th:if="${#fields.hasErrors('owner')}"
+                           th:errors="*{owner}">Error with owner</p>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
     </div>
 </div>

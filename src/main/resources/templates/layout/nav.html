@@ -1,17 +1,20 @@
-<div th:fragment="nav" class="navbar navbar-collapse navbar-fixed-top header"
+<div th:fragment="nav" class="navbar navbar-inverse navbar-collapse navbar-fixed-top"
      role="navigation">
     <div class="container-fluid">
         <ul class="nav navbar-nav">
-            <li><a class="navbar-brand" th:href="@{/product}">RESTI</a></li>
+            <li><a class="navbar-brand" th:href="@{/}">RESTI</a></li>
+
+            <li><a href="/product">产品线</a></li>
             <li><a href="/httpapi">接口管理</a></li>
             <li><a href="/testcase">测试用例</a></li>
-            <li class="dropdown"><a href="/environment">环境配置</a>
-                <ul class="dropdown-menu">
-                    <li> 数据库 dataSource</li>
-                    <li> 登陆 Session</li>
-                    <li> 测试环境 Host</li>
-                </ul>
 
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 环境配置</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/configdb">数据库 dataSource</a></li>
+                    <li><a href="/configsession"> 登陆 Session</a></li>
+                    <li><a href="/confighost">测试环境 Host </a></li>
+                </ul>
             </li>
 
             <li class="dropdown">
@@ -23,11 +26,13 @@
                     <li><a href="#">帮助</a></li>
                 </ul>
             </li>
+
             <li>
                 <form th:action="@{/logout}" method="post">
                     <input type="submit" value="退出"/>
                 </form>
             </li>
+
         </ul>
     </div>
 </div>

@@ -9,4 +9,5 @@ import resti.domain.HttpApi
 trait HttpApiRepository extends PagingAndSortingRepository[HttpApi, Long] {
   @Query(value = "SELECT distinct product FROM http_api", nativeQuery = true)
   def findProducts(): java.util.List[String]
+
 }

@@ -3,16 +3,16 @@
 <header th:include="layout/header :: header"></header>
 <body>
 <div th:include="layout/nav :: nav"></div>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-xs-12">
-            <h1 class="well well-small">测试用例</h1>
+            <h1 class="well well-small">用例管理</h1>
         </div>
     </div>
-    <div layout:fragment="content">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12">
-                <table class="table table-bordered table-hover">
+                <table class="table table-striped table-hover table-responsive">
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -32,8 +32,8 @@
                         <td th:text="${tc.paramsValues}">paramsValues</td>
                         <td th:text="${tc.owner}">owner</td>
 
-                        <td><a th:href="@{/httpapi/edit/__${tc.id}__}" href="#">编辑</a>
-                            | <a th:href="@{/httpapi/delete/__${tc.id}__}" href="#">删除</a>
+                        <td><a th:href="@{/testcase/edit/__${tc.id}__}" href="#">编辑</a>
+                            | <a th:href="@{/testcase/delete/__${tc.id}__}" href="#">删除</a>
                         </td>
                     </tr>
                     </tbody>
@@ -44,9 +44,9 @@
         <!--begin:分页-->
         <div class="pagination" style="margin-left: 15px">
             <ul>
-                <li><a th:href="@{/testcase/?page=${pageIndex - 1} }" href="#">上一页</a></li>
-                <li><a th:href="@{/testcase/?page=${pageIndex} }" href="#" th:text="${pageIndex}"></a></li>
-                <li><a th:href="@{/testcase/?page=${pageIndex + 1} }" href="#">下一页</a></li>
+                <li><a th:href="@{/testcase(page=${pageIndex} - 1)}" href="#">上一页</a></li>
+                <li><a th:href="@{/testcase(page=${pageIndex})}" href="#" th:text="${pageIndex} + 1"></a></li>
+                <li><a th:href="@{/testcase(page=${pageIndex} + 1)}" href="#">下一页</a></li>
 
             </ul>
         </div>

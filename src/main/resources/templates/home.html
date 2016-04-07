@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org">
-<header th:include="layout/header :: header"></header>
+<head th:include="layout/header :: header"></head>
 <body>
 <div th:include="layout/nav :: nav"></div>
 <div class="row">
@@ -14,6 +14,6 @@
 <p>
     Click <a th:href="@{/product}">here</a> to see product list.
 </p>
-<div th:include="layout/footer :: copy"></div>
+<footer th:include="layout/footer :: copy"></footer>
 </body>
 </html>

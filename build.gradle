@@ -1,13 +1,14 @@
 buildscript {
     ext {
         springBootVersion = '1.3.3.RELEASE'
+        springLoadedVersion = '1.2.5.RELEASE'
     }
     repositories {
         mavenCentral()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath("org.springframework:springloaded:1.2.4.RELEASE")
+        classpath("org.springframework:springloaded:${springLoadedVersion}")
     }
 }
 
@@ -34,7 +35,7 @@ ext {
 
 jar {
     baseName = 'resti'
-    version = '0.1.0'
+    version = '1.0.0'
 }
 
 repositories {
@@ -43,6 +44,24 @@ repositories {
     maven { url "https://repo.spring.io/milestone" }
 
 }
+
+//allprojects {
+//    repositories {
+//        def REPOSITORY_URL = 'http://maven.oschina.net/content/groups/public'
+//        all { ArtifactRepository repo ->
+//            if (repo instanceof MavenArtifactRepository) {
+//                def url = repo.url.toString()
+//                if (url.startsWith('https://repo1.maven.org/maven2') || url.startsWith('https://jcenter.bintray.com/')) {
+//                    project.logger.lifecycle "Repository ${repo.url} replaced by $REPOSITORY_URL."
+//                    remove repo
+//                }
+//            }
+//        }
+//        maven {
+//            url REPOSITORY_URL
+//        }
+//    }
+//}
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
@@ -72,7 +91,7 @@ dependencies {
     compile("org.scala-lang:scala-library:2.11.7")
 
     compile("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-    compile('org.springframework:springloaded:1.2.0.RELEASE')
+    compile("org.springframework:springloaded:${springLoadedVersion}")
 
     testCompile("org.springframework.boot:spring-boot-starter-test")
     testCompile("junit:junit")

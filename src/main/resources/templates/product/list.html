@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <header th:include="layout/header :: header"> </header>
 <body>
-	<div th:include="layout/nav :: nav"></div>
+	<nav th:include="layout/nav :: nav"></nav>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-12">
@@ -33,6 +33,6 @@
 			</div>
 		</div>
 	</div>
-	<div th:include="layout/footer :: copy"></div>
+	<footer th:include="layout/footer :: copy"></footer>
 </body>
 </html>

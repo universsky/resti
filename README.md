@@ -14,7 +14,7 @@ web application using spring-boot and Scala
 + Run using `./gradlew bootRun` OR `./gradle bRun`
 OR  `java -jar build/libs/resti-0.1.0.jar`
 
-After the web container Started, open the browser visit [http://localhost:8080/](http://localhost:8080/)
+After the web container Started, open the browser visit [http://localhost:7000/](http://localhost:7000/)
 
 
 ### Using sbt as the build tool:
